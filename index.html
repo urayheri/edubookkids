@@ -3,30 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduBooks Kids - Paket Printable & Modul Belajar Anak Lengkap</title>
+    <title>Dunia Edukasi Anak - Paket Printable & Modul Belajar Playful</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: { sans: ['Inter', 'sans-serif'] },
-                    colors: { brand: { 500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8' } },
+                    fontFamily: {
+                        heading: ['Fredoka', 'sans-serif'],
+                        sans: ['Quicksand', 'sans-serif']
+                    },
+                    colors: {
+                        kids: {
+                            yellow: '#FFB800',
+                            orange: '#FF6B00',
+                            pink: '#FF4785',
+                            purple: '#8B5CF6',
+                            blue: '#00A3FF',
+                            green: '#00C853'
+                        }
+                    },
                     animation: {
-                        'wave-slow': 'wave 8s ease-in-out infinite alternate',
-                        'wave-fast': 'wave 4s ease-in-out infinite alternate',
-                        'pulse-glow': 'pulseGlow 6s ease-in-out infinite',
+                        'bounce-slow': 'bounce 3s infinite',
+                        'float': 'float 4s ease-in-out infinite'
                     },
                     keyframes: {
-                        wave: {
-                            '0%': { transform: 'translateX(-5%) translateY(0px) scaleY(1)' },
-                            '50%': { transform: 'translateX(0%) translateY(-15px) scaleY(1.05)' },
-                            '100%': { transform: 'translateX(5%) translateY(0px) scaleY(1)' },
-                        },
-                        pulseGlow: {
-                            '0%, 100%': { opacity: '0.3', transform: 'scale(1)' },
-                            '50%': { opacity: '0.7', transform: 'scale(1.2)' },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-12px)' }
                         }
                     }
                 }
@@ -34,174 +40,335 @@
         }
     </script>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans antialiased overflow-x-hidden selection:bg-brand-500 selection:text-white">
+<body class="bg-amber-50/50 text-slate-800 font-sans selection:bg-kids-pink selection:text-white">
+
+    <!-- Top Promo Bar -->
+    <div class="bg-gradient-to-r from-kids-orange via-kids-pink to-kids-purple text-white text-xs sm:text-sm font-bold py-2.5 px-4 text-center shadow-md flex justify-center items-center gap-2">
+        <span class="bg-white/20 px-2.5 py-0.5 rounded-full animate-pulse">🔥 PROMO SPESIAL HARI INI</span>
+        <span>Diskon Lebih Dari 75% + Akses Google Drive Seumur Hidup!</span>
+    </div>
 
     <!-- Header / Navbar -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800">
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b-4 border-kids-yellow shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <a href="index.html" class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-500 flex items-center justify-center font-bold text-xl shadow-lg shadow-brand-500/30">
-                    <i class="fa-solid fa-child-reaching text-white"></i>
+                <div class="w-12 h-12 rounded-2xl bg-kids-yellow text-amber-900 flex items-center justify-center font-bold text-2xl shadow-lg shadow-kids-yellow/40 -rotate-3 hover:rotate-0 transition-transform">
+                    <i class="fa-solid fa-shapes"></i>
                 </div>
-                <span class="text-xl font-bold tracking-tight text-white">EduBooks<span class="text-brand-500">Kids.</span></span>
+                <span class="font-heading text-2xl font-bold tracking-wide text-slate-800">DuniaEdu<span class="text-kids-pink">Kids</span>.</span>
             </a>
-            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-                <a href="#paket" class="hover:text-brand-500 transition-colors">Pilihan Paket</a>
-                <a href="#keunggulan" class="hover:text-brand-500 transition-colors">Keunggulan</a>
-                <a href="#faq" class="hover:text-brand-500 transition-colors">FAQ</a>
+            <nav class="hidden md:flex items-center gap-8 text-base font-bold text-slate-700">
+                <a href="#isi-paket" class="hover:text-kids-blue transition-colors">Isi Materi</a>
+                <a href="#paket" class="hover:text-kids-orange transition-colors">Harga Paket</a>
+                <a href="#keunggulan" class="hover:text-kids-green transition-colors">Keunggulan</a>
+                <a href="#faq" class="hover:text-kids-purple transition-colors">FAQ</a>
             </nav>
-            <a href="#paket" class="bg-brand-600 hover:bg-brand-500 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-md shadow-brand-600/20">
-                Pilih Paket Belajar
+            <a href="#paket" class="bg-kids-pink hover:bg-rose-600 text-white font-heading font-bold px-6 py-3 rounded-full text-base transition-all shadow-lg shadow-kids-pink/30 hover:scale-105">
+                Ambil Promo Sekarang <i class="fa-solid fa-arrow-right ml-1"></i>
             </a>
         </div>
     </header>
 
-    <!-- HERO SECTION DENGAN ANIMASI GELOMBANG -->
-    <section class="pt-36 pb-28 md:pt-48 md:pb-40 relative overflow-hidden">
-        
-        <!-- Background Glowing Orb -->
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-600/20 rounded-full blur-[140px] -z-10 animate-pulse-glow"></div>
+    <!-- HERO SECTION VIBRANT & PLAYFUL -->
+    <section class="pt-12 pb-24 md:pt-16 md:pb-32 bg-gradient-to-b from-amber-50 via-sky-50 to-amber-50 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                
+                <div class="lg:col-span-7 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-kids-yellow/30 border-2 border-kids-yellow text-amber-900 font-bold px-4 py-2 rounded-full text-xs sm:text-sm mb-6 animate-bounce-slow">
+                        <span>🎉</span> Solusi Terbaik Mengurangi Screen-Time / Gadget Anak!
+                    </div>
 
-        <div class="max-w-7xl mx-auto px-4 text-center relative z-10">
-            <span class="px-4 py-2 rounded-full bg-slate-900 border border-slate-800 text-slate-300 text-xs sm:text-sm font-medium inline-block mb-4 shadow-inner">
-                🎨 25+ Folder Printable, Lembar Kerja & Game Edukasi Anak
-            </span>
-            <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight mt-2 max-w-4xl mx-auto leading-tight">
-                Ciptakan Momen Belajar Seru Bersama Anak Lewat <span class="bg-gradient-to-r from-brand-500 via-indigo-400 to-cyan-400 bg-clip-text text-transparent">Paket Modul Edukasi</span>
-            </h1>
-            <p class="mt-6 text-slate-400 text-lg max-w-2xl mx-auto">
-                Ribuan lembar kerja cetak (*printable*), game edukasi, dongeng bersuara, hingga koding anak. Siap cetak dan diakses seumur hidup via Google Drive!
-            </p>
-            <div class="mt-8 flex justify-center gap-4">
-                <a href="#paket" class="bg-brand-600 hover:bg-brand-500 text-white font-semibold px-8 py-3.5 rounded-xl transition-all shadow-lg shadow-brand-600/30 hover:-translate-y-0.5">
-                    Lihat Pilihan Paket (Mulai Rp 15rb)
-                </a>
+                    <h1 class="font-heading text-4xl sm:text-6xl font-extrabold text-slate-900 leading-[1.15] mb-6">
+                        Bantu Anak <span class="text-kids-pink underline decoration-kids-yellow decoration-wavy">Pintar Calistung</span> & Kreatif Tanpa Bosan! 🎈
+                    </h1>
+
+                    <p class="text-slate-600 text-base sm:text-xl font-medium leading-relaxed mb-8 max-w-2xl">
+                        Dapatkan <strong class="text-slate-900 font-bold">25+ Folder Printable Siap Cetak</strong>, Modul Belajar, Game Motorik, hingga Dongeng Bersuara. Hemat puluhan kali lipat dibanding beli buku fisik di toko!
+                    </p>
+
+                    <!-- Trust Checklist -->
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-left mb-8 font-bold text-xs sm:text-sm text-slate-700">
+                        <div class="flex items-center gap-2 bg-white p-2.5 rounded-xl shadow-sm border border-slate-100">
+                            <i class="fa-solid fa-circle-check text-kids-green text-lg"></i> Akses Google Drive
+                        </div>
+                        <div class="flex items-center gap-2 bg-white p-2.5 rounded-xl shadow-sm border border-slate-100">
+                            <i class="fa-solid fa-circle-check text-kids-blue text-lg"></i> Bebas Cetak Berulang
+                        </div>
+                        <div class="flex items-center gap-2 bg-white p-2.5 rounded-xl shadow-sm border border-slate-100 col-span-2 sm:col-span-1">
+                            <i class="fa-solid fa-circle-check text-kids-purple text-lg"></i> Usia 2 - 9 Tahun
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#paket" class="bg-kids-green hover:bg-emerald-600 text-white font-heading text-lg font-bold px-8 py-4 rounded-2xl shadow-xl shadow-kids-green/30 hover:scale-105 transition-all text-center">
+                            🚀 Lihat Pilihan Paket (Mulai Rp 15rb)
+                        </a>
+                        <a href="#isi-paket" class="bg-white hover:bg-slate-50 text-slate-700 border-2 border-slate-200 font-heading text-lg font-bold px-6 py-4 rounded-2xl shadow-sm transition-all text-center">
+                            📖 Lihat Detail Isi 25 Folder
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Visual Box -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative bg-white p-6 rounded-3xl border-4 border-kids-blue shadow-2xl animate-float">
+                        <div class="bg-gradient-to-tr from-kids-yellow via-kids-orange to-kids-pink rounded-2xl p-6 text-white text-center">
+                            <i class="fa-solid fa-box-open text-6xl mb-3 animate-pulse"></i>
+                            <h3 class="font-heading text-2xl font-bold">25-in-1 BUNDLE DIGITAL</h3>
+                            <p class="text-xs font-semibold text-white/90 mt-1">Ribuan Lembar Kerja & Game Edukasi Siap Download & Print</p>
+                            
+                            <div class="mt-6 bg-white/20 backdrop-blur-md rounded-xl p-4 text-left space-y-2 text-xs font-bold">
+                                <div class="flex justify-between"><span>🧩 Game Motorik & Maze</span><span>✅ Included</span></div>
+                                <div class="flex justify-between"><span>✏️ Belajar Calistung SD</span><span>✅ Included</span></div>
+                                <div class="flex justify-between"><span>🎧 Dongeng Bersuara & Coding</span><span>✅ Included</span></div>
+                                <div class="flex justify-between"><span>🎨 Mewarnai & Drawing</span><span>✅ Included</span></div>
+                            </div>
+                        </div>
+                        <div class="mt-4 text-center">
+                            <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Garansi Hemat & Puas 100%</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
 
-        <!-- ANIMASI GELOMBANG SVG 1 -->
-        <div class="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none z-0 pointer-events-none">
-            <svg class="relative block w-[200%] h-20 md:h-32 animate-wave-slow opacity-30 text-brand-600" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <div class="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none z-0">
+            <svg class="relative block w-full h-12 text-white" viewBox="0 0 1200 120" preserveAspectRatio="none">
                 <path d="M0,0 C150,90 350,-40 500,45 C650,130 900,10 1200,50 L1200,120 L0,120 Z" fill="currentColor"></path>
-            </svg>
-        </div>
-
-        <!-- ANIMASI GELOMBANG SVG 2 -->
-        <div class="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none z-0 pointer-events-none">
-            <svg class="relative block w-[200%] h-16 md:h-24 animate-wave-fast opacity-20 text-indigo-500" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M0,30 C200,100 450,10 700,70 C950,130 1100,20 1200,40 L1200,120 L0,120 Z" fill="currentColor"></path>
-            </svg>
-        </div>
-        
-        <!-- Wave Transition Divider -->
-        <div class="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none z-10 pointer-events-none">
-            <svg class="relative block w-full h-10 text-slate-900" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M0,0 C300,90 800,20 1200,60 L1200,120 L0,120 Z" fill="currentColor"></path>
             </svg>
         </div>
     </section>
 
-    <!-- SECTION PAKET BELAJAR (3 TIER) -->
-    <section id="paket" class="py-16 bg-slate-900 relative z-20">
+    <!-- SECTION MASALAH & SOLUSI -->
+    <section class="py-16 bg-white">
+        <div class="max-w-5xl mx-auto px-4 text-center">
+            <span class="bg-kids-pink/10 text-kids-pink font-bold px-4 py-1.5 rounded-full text-xs sm:text-sm uppercase tracking-wider">Apakah Anda Mengalami Hal Ini?</span>
+            <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 mt-3 mb-10">
+                Apakah Bunda Sering Pusing Karena Hal Ini pada Si Kecil? 🥺
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+                <div class="bg-rose-50 border-2 border-rose-200 p-6 rounded-2xl">
+                    <div class="w-10 h-10 bg-rose-500 text-white rounded-xl flex items-center justify-center font-bold text-xl mb-3">📱</div>
+                    <h3 class="font-heading font-bold text-lg text-rose-900 mb-2">Kecanduan HP / Gadget</h3>
+                    <p class="text-slate-600 text-sm">Anak menangis kalau HP diambil, sulit diajak belajar hal baru.</p>
+                </div>
+                <div class="bg-amber-50 border-2 border-amber-200 p-6 rounded-2xl">
+                    <div class="w-10 h-10 bg-amber-500 text-white rounded-xl flex items-center justify-center font-bold text-xl mb-3">📚</div>
+                    <h3 class="font-heading font-bold text-lg text-amber-900 mb-2">Buku Cetak Fisik Mahal</h3>
+                    <p class="text-slate-600 text-sm">Beli buku di toko 1-2 pcs harganya sudah 50-100 ribu, tapi cepat habis di-coret-coret anak.</p>
+                </div>
+                <div class="bg-purple-50 border-2 border-purple-200 p-6 rounded-2xl">
+                    <div class="w-10 h-10 bg-purple-500 text-white rounded-xl flex items-center justify-center font-bold text-xl mb-3">🥱</div>
+                    <h3 class="font-heading font-bold text-lg text-purple-900 mb-2">Materi Belajar Membosankan</h3>
+                    <p class="text-slate-600 text-sm">Teks melulu tanpa gambar berwarna membuat anak cepat bosan.</p>
+                </div>
+            </div>
+
+            <!-- Solusi Banner -->
+            <div class="mt-12 bg-gradient-to-r from-kids-blue to-kids-purple text-white p-8 rounded-3xl shadow-xl text-center">
+                <h3 class="font-heading text-2xl sm:text-3xl font-bold mb-3">Solusinya Ada di DuniaEduKids! ✨</h3>
+                <p class="text-sm sm:text-base font-medium max-w-2xl mx-auto">
+                    Tinggal print lembar kerja kapan pun dibutuhkan. Jika coretan sudah penuh, tinggal print ulang tanpa perlu beli buku baru lagi!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION DETAIL ISI 25 FOLDER -->
+    <section id="isi-paket" class="py-20 bg-amber-50/60">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-brand-500 font-semibold text-xs uppercase tracking-widest">Investasi Pendidikan Anak</span>
-                <h2 class="text-3xl font-extrabold text-white mt-1">Pilih Paket Belajar Anak</h2>
-                <p class="text-slate-400 mt-2 text-sm sm:text-base">Materi dikirim via Google Drive (Akses Terkunci Khusus Gmail Anda & Bebas Download)</p>
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="bg-kids-yellow text-amber-900 font-bold px-4 py-1.5 rounded-full text-xs sm:text-sm uppercase tracking-wider">Transparan & Terlengkap</span>
+                <h2 class="font-heading text-3xl sm:text-5xl font-bold text-slate-900 mt-3">
+                    Intip Detail Isi <span class="text-kids-purple">25 Folder Pembelajaran</span>
+                </h2>
+                <p class="text-slate-600 mt-3 text-base">Semua materi tersusun rapi di Google Drive. Berikut rinciannya:</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Folder Highlights -->
+                <div class="bg-white p-6 rounded-3xl border-2 border-slate-200 shadow-sm hover:border-kids-yellow transition-all">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-kids-yellow/20 text-amber-700 rounded-xl flex items-center justify-center font-bold font-heading">01</div>
+                        <h3 class="font-heading font-bold text-lg text-slate-800">Dongeng Bersuara</h3>
+                    </div>
+                    <p class="text-slate-600 text-sm">Cerita audio interaktif untuk melatih daya tangkap, fokus dengar, dan imajinasi anak sebelum tidur.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl border-2 border-slate-200 shadow-sm hover:border-kids-orange transition-all">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-kids-orange/20 text-kids-orange rounded-xl flex items-center justify-center font-bold font-heading">02</div>
+                        <h3 class="font-heading font-bold text-lg text-slate-800">Games Edukasi</h3>
+                    </div>
+                    <p class="text-slate-600 text-sm">Modul permainan logika dan kecerdasan anak berbasis cetak yang seru dan menantang.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl border-2 border-slate-200 shadow-sm hover:border-kids-pink transition-all">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-kids-pink/20 text-kids-pink rounded-xl flex items-center justify-center font-bold font-heading">03</div>
+                        <h3 class="font-heading font-bold text-lg text-slate-800">Matematika SD</h3>
+                    </div>
+                    <p class="text-slate-600 text-sm">Latihan penjumlahan, pengurangan, perbandingan, dan soal cerita bergambar mudah paham.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl border-2 border-slate-200 shadow-sm hover:border-kids-purple transition-all">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-kids-purple/20 text-kids-purple rounded-xl flex items-center justify-center font-bold font-heading">04</div>
+                        <h3 class="font-heading font-bold text-lg text-slate-800">Coding Anak</h3>
+                    </div>
+                    <p class="text-slate-600 text-sm">Pengenalan logika algoritma dasar sejak dini dengan metode visual warna-warni yang ramah anak.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl border-2 border-slate-200 shadow-sm hover:border-kids-blue transition-all">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-kids-blue/20 text-kids-blue rounded-xl flex items-center justify-center font-bold font-heading">05</div>
+                        <h3 class="font-heading font-bold text-lg text-slate-800">Agama Islam</h3>
+                    </div>
+                    <p class="text-slate-600 text-sm">Mengenal doa harian, hijaiyah, rukun islam, wudhu, dan nilai kebaikan sejak usia dini.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl border-2 border-slate-200 shadow-sm hover:border-kids-green transition-all">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-kids-green/20 text-kids-green rounded-xl flex items-center justify-center font-bold font-heading">06</div>
+                        <h3 class="font-heading font-bold text-lg text-slate-800">Bahasa Inggris</h3>
+                    </div>
+                    <p class="text-slate-600 text-sm">Mengenal vocabulary dasar (benda, hewan, buah, kata kerja) dilengkapi gambar ilustrasi.</p>
+                </div>
+
+                <!-- 19 Other Folders Grid -->
+                <div class="col-span-1 md:col-span-2 lg:col-span-3 bg-white p-8 rounded-3xl border-4 border-dashed border-slate-300">
+                    <h4 class="font-heading text-xl font-bold text-slate-900 mb-4 text-center">
+                        ➕ Ditambah 19 Folder Lengkap Lainnya:
+                    </h4>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 text-xs sm:text-sm font-semibold text-slate-700">
+                        <div class="bg-slate-100 p-2.5 rounded-xl">07. Bahasa Indonesia</div>
+                        <div class="bg-slate-100 p-2.5 rounded-xl">08. Alphabet (A-Z)</div>
+                        <div class="bg-slate-100 p-2.5 rounded-xl">09. Belajar Membaca</div>
+                        <div class="bg-slate-100 p-2.5 rounded-xl">10. Folder Bonus</div>
+                        <div class="bg-slate-100 p-2.5 rounded-xl">11. Color (Warna)</div>
+                        <div class="bg-slate-100 p-2.5 rounded-xl">12. Color by Numbers</div>
+                        <div class="bg-slate-100 p-2.5 rounded-xl">13. Connect the Dots</div>
+                        <div class="bg-slate-100 p-2.5 rounded-xl">14. Counting Game</div>
+                        <div class="bg-slate-100 p-2.5 rounded-xl">15. Crossword (Teka-Teki)</div>
+                        <div class="bg-slate-100 p-2.5 rounded-xl">16. Drawing (Latihan Menggambar)</div>
+                        <div class="bg-slate-100 p-2.5 rounded-xl">17. Ebook Anak Spesial</div>
+                        <div class="bg-slate-100 p-2.5 rounded-xl">18. Panduan Belajar</div>
+                        <div class="bg-slate-100 p-2.5 rounded-xl">19. Maths Advance</div>
+                        <div class="bg-slate-100 p-2.5 rounded-xl">20. Maze Game (Labirin)</div>
+                        <div class="bg-slate-100 p-2.5 rounded-xl">21. Numbers (Angka 1-100)</div>
+                        <div class="bg-slate-100 p-2.5 rounded-xl">22. Shadow Game (Bayangan)</div>
+                        <div class="bg-slate-100 p-2.5 rounded-xl">23. Shapes (Bentuk Geometri)</div>
+                        <div class="bg-slate-100 p-2.5 rounded-xl">24. Bonus Cover printable</div>
+                        <div class="bg-slate-100 p-2.5 rounded-xl">25. MEWARNAI (Ribuan Gambar)</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION PAKET HARGA -->
+    <section id="paket" class="py-20 bg-gradient-to-b from-white to-sky-50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="bg-kids-pink text-white font-bold px-4 py-1.5 rounded-full text-xs sm:text-sm uppercase tracking-wider">Hemat Pengeluaran Buku</span>
+                <h2 class="font-heading text-3xl sm:text-5xl font-bold text-slate-900 mt-3">
+                    Pilih Paket Belajar Si Kecil
+                </h2>
+                <p class="text-slate-600 mt-3 text-base">Materi dikirim via Google Drive. Diundang langsung khusus ke Gmail terdaftar Anda (Akses Privat & Aman).</p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
                 
-                <!-- 1. PAKET HEMAT -->
-                <div class="bg-slate-950 rounded-3xl p-8 border border-slate-800 flex flex-col justify-between hover:border-slate-700 transition-all duration-300 hover:-translate-y-1">
+                <!-- 1. PAKET HEMAT (15rb) -->
+                <div class="bg-white rounded-3xl p-8 border-4 border-slate-200 flex flex-col justify-between hover:border-slate-300 transition-all shadow-md">
                     <div>
                         <div class="flex justify-between items-center mb-4">
-                            <h3 class="text-xl font-bold text-white">Paket Hemat</h3>
-                            <span class="text-xs bg-slate-800 text-slate-400 px-3 py-1 rounded-full">7 Folder Utama</span>
+                            <h3 class="font-heading text-2xl font-bold text-slate-800">Paket Hemat</h3>
+                            <span class="text-xs bg-slate-100 text-slate-600 font-bold px-3 py-1 rounded-full">7 Folder</span>
                         </div>
-                        <p class="text-slate-400 text-xs">Materi dasar fondasi calistung & aktivitas dasar anak.</p>
-                        <div class="my-6">
-                            <span class="text-xs text-slate-500 line-through">Rp 50.000</span>
-                            <div class="text-4xl font-extrabold text-white mt-1">Rp 15.000</div>
+                        <p class="text-slate-500 text-xs">Materi dasar fondasi calistung & aktivitas anak.</p>
+                        <div class="my-6 bg-amber-50 p-4 rounded-2xl border border-amber-200 text-center">
+                            <span class="text-xs text-slate-400 line-through">Rp 50.000</span>
+                            <div class="font-heading text-4xl font-bold text-slate-900 mt-0.5">Rp 15.000</div>
                         </div>
-                        <div class="border-t border-slate-800/80 pt-4 mb-8">
-                            <p class="text-xs font-semibold text-slate-400 mb-3 uppercase">Daftar Materi yang Didapat:</p>
-                            <ul class="space-y-2.5 text-xs text-slate-300">
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Bahasa Indonesia</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Alphabet</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Belajar Membaca</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Numbers (Angka)</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Shapes (Bentuk)</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Color (Warna)</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Modul Mewarnai</li>
-                            </ul>
+                        <div class="space-y-3 text-xs sm:text-sm text-slate-700 font-semibold mb-8">
+                            <p class="text-slate-400 uppercase text-[10px] tracking-wider">Materi Didapat:</p>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-kids-green"></i> (7) Bahasa Indonesia</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-kids-green"></i> (8) Alphabet (A-Z)</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-kids-green"></i> (9) Belajar Membaca</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-kids-green"></i> (21) Numbers (Angka)</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-kids-green"></i> (23) Shapes (Bentuk)</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-kids-green"></i> (11) Color (Warna)</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-kids-green"></i> (25) MEWARNAI</div>
                         </div>
                     </div>
-                    <a href="checkout.html?plan=hemat" class="w-full text-center bg-slate-800 hover:bg-slate-700 text-white font-semibold py-3.5 rounded-xl transition-all block text-sm">
-                        Pilih Paket Hemat
+                    <a href="checkout.html?plan=hemat" class="w-full text-center bg-slate-800 hover:bg-slate-900 text-white font-heading font-bold py-4 rounded-2xl transition-all shadow-md block">
+                        Pilih Paket Hemat (Rp 15rb)
                     </a>
                 </div>
 
-                <!-- 2. PAKET SEDANG -->
-                <div class="bg-slate-950 rounded-3xl p-8 border border-slate-800 flex flex-col justify-between hover:border-slate-700 transition-all duration-300 hover:-translate-y-1">
+                <!-- 2. PAKET SEDANG (30rb) -->
+                <div class="bg-white rounded-3xl p-8 border-4 border-kids-blue flex flex-col justify-between hover:border-sky-400 transition-all shadow-lg relative">
                     <div>
                         <div class="flex justify-between items-center mb-4">
-                            <h3 class="text-xl font-bold text-white">Paket Sedang</h3>
-                            <span class="text-xs bg-indigo-500/20 text-indigo-400 px-3 py-1 rounded-full">15 Folder Lengkap</span>
+                            <h3 class="font-heading text-2xl font-bold text-slate-800">Paket Sedang</h3>
+                            <span class="text-xs bg-kids-blue/10 text-kids-blue font-bold px-3 py-1 rounded-full">15 Folder</span>
                         </div>
-                        <p class="text-slate-400 text-xs">Materi sekolah lengkap + game edukasi motorik anak.</p>
-                        <div class="my-6">
-                            <span class="text-xs text-slate-500 line-through">Rp 100.000</span>
-                            <div class="text-4xl font-extrabold text-white mt-1">Rp 30.000</div>
+                        <p class="text-slate-500 text-xs">Materi sekolah lengkap + game edukasi motorik.</p>
+                        <div class="my-6 bg-sky-50 p-4 rounded-2xl border border-sky-200 text-center">
+                            <span class="text-xs text-slate-400 line-through">Rp 100.000</span>
+                            <div class="font-heading text-4xl font-bold text-kids-blue mt-0.5">Rp 30.000</div>
                         </div>
-                        <div class="border-t border-slate-800/80 pt-4 mb-8">
-                            <p class="text-xs font-semibold text-slate-400 mb-3 uppercase">Semua Isi Paket Hemat + 8 Folder:</p>
-                            <ul class="space-y-2.5 text-xs text-slate-300">
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> 7 Folder Paket Hemat</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Matematika SD</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Bahasa Inggris</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Agama Islam</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Ebook Anak</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Games Edukasi & Counting Game</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Color by Numbers & Drawing</li>
-                            </ul>
+                        <div class="space-y-3 text-xs sm:text-sm text-slate-700 font-semibold mb-8">
+                            <p class="text-slate-400 uppercase text-[10px] tracking-wider">Isi Paket Hemat + 8 Folder:</p>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-kids-blue"></i> Semua 7 Folder Paket Hemat</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-kids-blue"></i> (3) Matematika SD</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-kids-blue"></i> (6) Bahasa Inggris</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-kids-blue"></i> (5) Agama Islam</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-kids-blue"></i> (17) Ebook Anak</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-kids-blue"></i> (2) Games Edukasi</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-kids-blue"></i> (12) Color by Numbers</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-kids-blue"></i> (14) Counting Game & Drawing</div>
                         </div>
                     </div>
-                    <a href="checkout.html?plan=sedang" class="w-full text-center bg-slate-800 hover:bg-slate-700 text-white font-semibold py-3.5 rounded-xl transition-all block text-sm">
-                        Pilih Paket Sedang
+                    <a href="checkout.html?plan=sedang" class="w-full text-center bg-kids-blue hover:bg-sky-600 text-white font-heading font-bold py-4 rounded-2xl transition-all shadow-md block">
+                        Pilih Paket Sedang (Rp 30rb)
                     </a>
                 </div>
 
-                <!-- 3. PAKET KOMPLIT (FEATURED & TERLARIS) -->
-                <div class="bg-slate-950 rounded-3xl p-8 border-2 border-brand-500 relative flex flex-col justify-between shadow-2xl shadow-brand-500/10 scale-105 hover:-translate-y-1 transition-all duration-300">
-                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-brand-600 to-indigo-500 text-white text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full shadow-md">
-                        🔥 Paling Laris / Value Terbaik
+                <!-- 3. PAKET KOMPLIT (50rb - FEATURED) -->
+                <div class="bg-white rounded-3xl p-8 border-4 border-kids-pink relative flex flex-col justify-between shadow-2xl scale-105 z-10">
+                    <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-kids-orange via-kids-pink to-kids-purple text-white text-xs font-heading font-bold uppercase tracking-wider px-5 py-2 rounded-full shadow-lg flex items-center gap-1.5">
+                        ⭐ PALING TERLARIS / BEST VALUE
                     </div>
                     <div>
-                        <div class="flex justify-between items-center mb-4">
-                            <h3 class="text-xl font-bold text-white">Paket Komplit</h3>
-                            <span class="text-xs bg-brand-500/20 text-brand-400 px-3 py-1 rounded-full">25 Folder (All-In-One)</span>
+                        <div class="flex justify-between items-center mb-4 mt-2">
+                            <h3 class="font-heading text-2xl font-bold text-slate-800">Paket Komplit</h3>
+                            <span class="text-xs bg-kids-pink/20 text-kids-pink font-bold px-3 py-1 rounded-full">25 Folder (All)</span>
                         </div>
-                        <p class="text-slate-400 text-xs">Seluruh materi tanpa terkecuali + modul premium & bonus.</p>
-                        <div class="my-6">
-                            <span class="text-xs text-slate-500 line-through">Rp 200.000</span>
-                            <div class="text-4xl font-extrabold text-white mt-1">Rp 50.000</div>
+                        <p class="text-slate-500 text-xs">Akses 100% seluruh folder tanpa batas + materi eksklusif.</p>
+                        <div class="my-6 bg-rose-50 p-4 rounded-2xl border border-rose-200 text-center">
+                            <span class="text-xs text-slate-400 line-through">Rp 200.000</span>
+                            <div class="font-heading text-4xl font-bold text-kids-pink mt-0.5">Rp 50.000</div>
                         </div>
-                        <div class="border-t border-slate-800/80 pt-4 mb-8">
-                            <p class="text-xs font-semibold text-brand-400 mb-3 uppercase">Semua Isi 25 Folder Lengkap:</p>
-                            <ul class="space-y-2 text-xs text-slate-200">
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-star text-amber-400"></i> <b>Dongeng Bersuara</b> (Spesial)</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-star text-amber-400"></i> <b>Coding Anak</b> (Keterampilan Muka)</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Semua 15 Folder Paket Sedang</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Connect the Dots & Maze Game</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Crossword & Shadow Game</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Maths Advance & Modul Panduan</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Folder Bonus & Bonus Cover</li>
-                            </ul>
+                        <div class="space-y-3 text-xs sm:text-sm text-slate-700 font-semibold mb-8">
+                            <p class="text-kids-pink font-bold uppercase text-[10px] tracking-wider">🌟 Semua 25 Folder Lengkap Termasuk:</p>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-star text-kids-yellow"></i> <b>(1) Dongeng Bersuara (Audio)</b></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-star text-kids-yellow"></i> <b>(4) Coding Anak</b></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-kids-pink"></i> Semua 15 Folder Paket Sedang</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-kids-pink"></i> (13) Connect the Dots</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-kids-pink"></i> (15) Crossword & Maze Game</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-kids-pink"></i> (22) Shadow Game & Shapes</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-kids-pink"></i> (10) Bonus Folder & Bonus Cover</div>
                         </div>
                     </div>
-                    <a href="checkout.html?plan=komplit" class="w-full text-center bg-brand-600 hover:bg-brand-500 text-white font-semibold py-3.5 rounded-xl transition-all shadow-lg shadow-brand-600/30 block text-sm">
-                        Beli Paket Komplit (Rp 50rb)
+                    <a href="checkout.html?plan=komplit" class="w-full text-center bg-kids-pink hover:bg-rose-600 text-white font-heading font-bold py-4 rounded-2xl transition-all shadow-xl shadow-kids-pink/30 hover:scale-105 block">
+                        Ambil Paket Komplit (Rp 50rb)
                     </a>
                 </div>
 
@@ -209,120 +376,86 @@
         </div>
     </section>
 
-    <!-- Wave Divider ke Section Keunggulan -->
-    <div class="w-full overflow-hidden leading-none bg-slate-900 text-slate-950/80 pointer-events-none">
-        <svg class="relative block w-full h-12" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M0,0 C200,80 500,0 800,60 C1050,110 1150,30 1200,20 L1200,120 L0,120 Z" fill="currentColor"></path>
-        </svg>
-    </div>
-
-    <!-- SECTION KEUNGGULAN -->
-    <section id="keunggulan" class="py-16 bg-slate-950/80 border-b border-slate-800/80 relative z-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-brand-500 font-semibold text-xs uppercase tracking-widest">Aman & Praktis</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-1">Mengapa Pilih Modul EduBooks?</h2>
-                <p class="text-slate-400 mt-3 text-sm sm:text-base">Dirancang khusus untuk mendukung tumbuh kembang dan daya pikir kreatif anak.</p>
+    <!-- SECTION TESTIMONI -->
+    <section class="py-16 bg-white border-y border-slate-100">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <span class="text-kids-purple font-bold text-xs uppercase tracking-wider">Review Jujur</span>
+                <h2 class="font-heading text-3xl font-bold text-slate-900 mt-1">Apa Kata Orang Tua yang Sudah Mencoba? 🥰</h2>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Keunggulan 1 -->
-                <div class="bg-slate-900/90 p-6 rounded-2xl border border-slate-800 hover:border-brand-500/50 transition-all duration-300 hover:-translate-y-1">
-                    <div class="w-12 h-12 bg-brand-500/10 text-brand-500 rounded-xl flex items-center justify-center text-xl mb-5">
-                        <i class="fa-solid fa-lock"></i>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-amber-50 p-6 rounded-3xl border border-amber-200">
+                    <div class="flex text-amber-400 mb-3 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-2">Akses Gmail Terkunci</h3>
-                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">Keamanan privat terpelihara. Akses Google Drive diundang langsung khusus ke email Gmail resmi Anda.</p>
+                    <p class="text-slate-700 text-sm italic mb-4">"Bagus banget, anak saya usia 4 tahun seneng banget sama gambar mewarnai dan maze game-nya. HP jadi lupa!"</p>
+                    <div class="font-heading font-bold text-slate-900 text-sm">Bunda Mayang — Surabaya</div>
                 </div>
-
-                <!-- Keunggulan 2 -->
-                <div class="bg-slate-900/90 p-6 rounded-2xl border border-slate-800 hover:border-brand-500/50 transition-all duration-300 hover:-translate-y-1">
-                    <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-xl flex items-center justify-center text-xl mb-5">
-                        <i class="fa-solid fa-print"></i>
+                <div class="bg-sky-50 p-6 rounded-3xl border border-sky-200">
+                    <div class="flex text-amber-400 mb-3 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-2">Bebas Cetak Berkali-kali</h3>
-                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">Cukup download filenya dan cetak (*print*) sesuai kebutuhan latihan harian anak di rumah.</p>
+                    <p class="text-slate-700 text-sm italic mb-4">"Super hemat Rp 50rb dapet 25 folder. Kalau di toko buku 50rb cuma dapet 1 buku tipis. Recommended banget Paket Komplit!"</p>
+                    <div class="font-heading font-bold text-slate-900 text-sm">Ayah Dimas — Jakarta</div>
                 </div>
-
-                <!-- Keunggulan 3 -->
-                <div class="bg-slate-900/90 p-6 rounded-2xl border border-slate-800 hover:border-brand-500/50 transition-all duration-300 hover:-translate-y-1">
-                    <div class="w-12 h-12 bg-indigo-500/10 text-indigo-400 rounded-xl flex items-center justify-center text-xl mb-5">
-                        <i class="fa-solid fa-infinity"></i>
+                <div class="bg-rose-50 p-6 rounded-3xl border border-rose-200">
+                    <div class="flex text-amber-400 mb-3 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-2">Akses Seumur Hidup</h3>
-                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">Sekali bayar untuk akses selamanya. Bebas dibuka dari HP, Tablet, maupun Komputer kapan saja.</p>
-                </div>
-
-                <!-- Keunggulan 4 -->
-                <div class="bg-slate-900/90 p-6 rounded-2xl border border-slate-800 hover:border-brand-500/50 transition-all duration-300 hover:-translate-y-1">
-                    <div class="w-12 h-12 bg-amber-500/10 text-amber-400 rounded-xl flex items-center justify-center text-xl mb-5">
-                        <i class="fa-solid fa-face-smile"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-white mb-2">Hemat & Variatif</h3>
-                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">Mendapatkan puluhan jenis materi dan ribuan halaman lembar kerja hanya dengan harga puluhan ribu saja.</p>
+                    <p class="text-slate-700 text-sm italic mb-4">"Akses Google Drive-nya aman dan teratur. Habis transfer langsung dimasukkan Gmail-nya. Mantap fast respon!"</p>
+                    <div class="font-heading font-bold text-slate-900 text-sm">Bunda Arini — Bandung</div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Wave Divider ke FAQ -->
-    <div class="w-full overflow-hidden leading-none bg-slate-950/80 text-slate-900 pointer-events-none">
-        <svg class="relative block w-full h-10" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M0,40 C300,110 700,0 1200,50 L1200,120 L0,120 Z" fill="currentColor"></path>
-        </svg>
-    </div>
 
     <!-- SECTION FAQ -->
-    <section id="faq" class="py-16 bg-slate-900 relative z-20">
+    <section id="faq" class="py-16 bg-amber-50/50">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <span class="text-brand-500 font-semibold text-xs uppercase tracking-widest">Pertanyaan Umum</span>
-                <h2 class="text-3xl font-extrabold text-white mt-1">Sering Diajukan (FAQ)</h2>
-                <p class="text-slate-400 mt-2 text-sm">Temukan jawaban untuk hal yang paling sering ditanyakan calon pembeli.</p>
+                <span class="text-kids-blue font-bold text-xs uppercase tracking-widest">Tanya Jawab</span>
+                <h2 class="font-heading text-3xl font-bold text-slate-900 mt-1">Pertanyaan Sering Diajukan (FAQ)</h2>
             </div>
 
             <div class="space-y-4">
-                <!-- FAQ Item 1 -->
-                <details class="bg-slate-950 rounded-2xl p-6 border border-slate-800/80 group [&_summary::-webkit-details-marker]:hidden">
-                    <summary class="flex items-center justify-between cursor-pointer font-semibold text-white text-sm sm:text-base">
-                        <span>Bagaimana cara saya menerima materi setelah melakukan pembayaran?</span>
-                        <span class="ml-4 transition group-open:rotate-180 text-brand-500"><i class="fa-solid fa-chevron-down"></i></span>
+                <details class="bg-white rounded-2xl p-6 border-2 border-slate-200/80 group [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex items-center justify-between cursor-pointer font-heading font-bold text-slate-800 text-base">
+                        <span>Bagaimana cara pengiriman file paketnya?</span>
+                        <span class="ml-4 transition group-open:rotate-180 text-kids-pink"><i class="fa-solid fa-chevron-down"></i></span>
                     </summary>
-                    <p class="mt-4 text-slate-400 text-xs sm:text-sm leading-relaxed border-t border-slate-800/80 pt-3">
-                        Setelah pembayaran dikonfirmasi, alamat Gmail Anda akan dimasukkan ke dalam daftar izin akses Google Drive resmi kami. Anda akan menerima notifikasi email dari Google Drive dan pesan konfirmasi via WhatsApp.
+                    <p class="mt-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-3">
+                        Materi tidak dikirim dalam bentuk buku fisik lewat kurir, melainkan berupa **akses folder Google Drive privat**. Setelah pembayaran, alamat Gmail Anda akan diundang untuk mengakses folder tersebut.
                     </p>
                 </details>
 
-                <!-- FAQ Item 2 -->
-                <details class="bg-slate-950 rounded-2xl p-6 border border-slate-800/80 group [&_summary::-webkit-details-marker]:hidden">
-                    <summary class="flex items-center justify-between cursor-pointer font-semibold text-white text-sm sm:text-base">
-                        <span>Mengapa harus mencantumkan Gmail di formulir pemesanan?</span>
-                        <span class="ml-4 transition group-open:rotate-180 text-brand-500"><i class="fa-solid fa-chevron-down"></i></span>
+                <details class="bg-white rounded-2xl p-6 border-2 border-slate-200/80 group [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex items-center justify-between cursor-pointer font-heading font-bold text-slate-800 text-base">
+                        <span>Mengapa aksesnya harus diundang via Gmail?</span>
+                        <span class="ml-4 transition group-open:rotate-180 text-kids-pink"><i class="fa-solid fa-chevron-down"></i></span>
                     </summary>
-                    <p class="mt-4 text-slate-400 text-xs sm:text-sm leading-relaxed border-t border-slate-800/80 pt-3">
-                        Demi menjaga eksklusivitas dan keamanan materi, folder Google Drive kami diset dalam mode privasi terbatas (*restricted access*). Hanya alamat Gmail terdaftar saja yang diizinkan untuk membuka dan mengunduh filenya.
+                    <p class="mt-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-3">
+                        Demi keamanan eksklusif pembeli. Folder diset dalam mode *Restricted Access* (Terbatas), sehingga hanya alamat Gmail resmi milik Anda yang bisa membuka dan mengunduh filenya.
                     </p>
                 </details>
 
-                <!-- FAQ Item 3 -->
-                <details class="bg-slate-950 rounded-2xl p-6 border border-slate-800/80 group [&_summary::-webkit-details-marker]:hidden">
-                    <summary class="flex items-center justify-between cursor-pointer font-semibold text-white text-sm sm:text-base">
-                        <span>Apakah materi ini bisa diprint sendiri di rumah?</span>
-                        <span class="ml-4 transition group-open:rotate-180 text-brand-500"><i class="fa-solid fa-chevron-down"></i></span>
+                <details class="bg-white rounded-2xl p-6 border-2 border-slate-200/80 group [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex items-center justify-between cursor-pointer font-heading font-bold text-slate-800 text-base">
+                        <span>Apakah materi ini bisa diprint/dicetak sendiri?</span>
+                        <span class="ml-4 transition group-open:rotate-180 text-kids-pink"><i class="fa-solid fa-chevron-down"></i></span>
                     </summary>
-                    <p class="mt-4 text-slate-400 text-xs sm:text-sm leading-relaxed border-t border-slate-800/80 pt-3">
-                        Ya, tentu saja! Format file disiapkan dalam format PDF/Gambar siap cetak ukuran standar A4. Anda bisa mencetak halaman mana saja yang ingin dipelajari anak hari ini.
+                    <p class="mt-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-3">
+                        Sangat bisa! Semua file berformat PDF/Gambar ukuran standar A4. Anda bisa mencetaknya di printer rumah maupun di tempat fotokopi.
                     </p>
                 </details>
 
-                <!-- FAQ Item 4 -->
-                <details class="bg-slate-950 rounded-2xl p-6 border border-slate-800/80 group [&_summary::-webkit-details-marker]:hidden">
-                    <summary class="flex items-center justify-between cursor-pointer font-semibold text-white text-sm sm:text-base">
-                        <span>Berapa lama akses Google Drive ini berlaku?</span>
-                        <span class="ml-4 transition group-open:rotate-180 text-brand-500"><i class="fa-solid fa-chevron-down"></i></span>
+                <details class="bg-white rounded-2xl p-6 border-2 border-slate-200/80 group [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex items-center justify-between cursor-pointer font-heading font-bold text-slate-800 text-base">
+                        <span>Sampai kapan akses Google Drive ini berlaku?</span>
+                        <span class="ml-4 transition group-open:rotate-180 text-kids-pink"><i class="fa-solid fa-chevron-down"></i></span>
                     </summary>
-                    <p class="mt-4 text-slate-400 text-xs sm:text-sm leading-relaxed border-t border-slate-800/80 pt-3">
-                        Akses berlaku seumur hidup (*lifetime access*). Anda bisa mengunduhnya kapan saja jika file terhapus dari perangkat Anda.
+                    <p class="mt-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-3">
+                        Akses berlaku **Seumur Hidup (Lifetime)**. Jika file di HP Anda terhapus, Anda tinggal masuk kembali ke Google Drive untuk mengunduhnya.
                     </p>
                 </details>
             </div>
@@ -330,8 +463,11 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-slate-950 border-t border-slate-900 py-8 text-center text-slate-500 text-sm">
-        <p>&copy; 2026 EduBooks Kids. All rights reserved.</p>
+    <footer class="bg-slate-900 text-slate-400 py-10 text-center text-xs sm:text-sm">
+        <div class="max-w-7xl mx-auto px-4">
+            <p class="font-heading text-lg font-bold text-white mb-2">DuniaEduKids.</p>
+            <p>&copy; 2026 DuniaEduKids. All rights reserved.</p>
+        </div>
     </footer>
 
 </body>
